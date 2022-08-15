@@ -40,7 +40,7 @@ const questions = [
         type: "list",
         name: "licenses",
         message: "What license would you like to include with your project?",
-        choices: ["MIT", "Apache-2.0", "GPL-3.0", "BSD-2-Clause", "BSD-3-Clause", "BSD-4-Clause",],
+        choices: ["MIT", "Apache_2.0", "GPL_3.0", "BSD_2--Clause", "BSD_3--Clause",],
     },
     {
         type: "input",
@@ -70,7 +70,7 @@ async function init() {
         const responses = await inquirer.prompt(questions);
         console.log(responses);
         const createContent = generateMarkdown(responses);
-        await writeFileAsync("testREADME.md", createContent);
+        await writeFileAsync("./utils/SampleREADME.md", createContent);
     } catch (error) {
         console.log(error);
     }
