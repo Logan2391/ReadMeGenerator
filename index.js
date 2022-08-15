@@ -1,13 +1,13 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const utils = require("utils");
-const generateMarkdown =require("./utils/generateMarkdown");
+const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
-        name: projectTitle,
+        name: "projectTitle",
         message: "What is the name of your project?",
     },
     {
@@ -17,43 +17,39 @@ const questions = [
     },
     {
         type: "input",
-        name: ,
-        message: ,
+        name: "installationInstructions",
+        message: "Write your instructiuons for installation if any.",
     },
     {
-        type: ,
-        name: ,
-        message: ,
+        type: "input",
+        name: "usageInfo",
+        message: "Write information for your applications intended usage.",
     },
     {
-        type: ,
-        name: ,
-        message: ,
+        type: "input",
+        name: "contributions",
+        message: "Who were the contributors to your project?",
     },
     {
-        type: ,
-        name: ,
-        message: ,
+        type: "input",
+        name: "test",
+        message: "If any, please provide any written tests for your application and how to run them.",
     },
     {
-        type: ,
-        name: ,
-        message: ,
+        type: "list",
+        name: "licenses",
+        message: "What license would you like to include with your project?",
+        choices: ["MIT","Apache-2.0","GPL-3.0","BSD-2-Clause","BSD-3-Clause","BSD-4-Clause",],
     },
     {
-        type: ,
-        name: ,
-        message: ,
+        type: "input",
+        name: "username",
+        message: "Please provide your GitHub username.",
     },
     {
-        type: ,
-        name: ,
-        message: ,
-    },
-    {
-        type: ,
-        name: ,
-        message: ,
+        type: "input",
+        name: "email",
+        message: "Please provide an email address.",
     },
 ];
 
@@ -61,7 +57,9 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions); 
+}
 
 // Function call to initialize app
 init();
